@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	
+	<!-- SEO -->
+	<title>Pet Finder</title>
+	<meta name="description" content="Split is a centrally-divided layout for a professional online presence with a big image or video left with alongside content." />
+	<meta name="robots" content="index, follow" />
+	<meta name="referrer" content="always" />
+
+	<!-- Social & Open Graph -->
+	<meta property="og:title" content="Split - HTML Template Demo" />
+	<meta property="og:description" content="Split is a centrally-divided layout for a professional online presence with a big image or video left with alongside content." />
+	<meta property="og:image" content="https://demo.onepagelove.com/fullsingle-html/split/images/social.jpg"> <!-- include your hosted image full URL -->
+	<meta property="og:url" content="https://demo.onepagelove.com/fullsingle-html/split/" />
+	<meta name="twitter:title" content="Split - HTML Template Demo" >
+	<meta name="twitter:description" content="Split is a centrally-divided layout for a professional online presence with a big image or video left with alongside content." />
+	<meta name="twitter:image" content="https://demo.onepagelove.com/fullsingle-html/split/images/social.jpg" /> <!-- include your hosted image full URL -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="@onepagelove" />
+	<meta name="twitter:creator" content="@robhope" />
+
+	<!-- Favicon -->
+	<link rel="icon" type="image/png" href="images/favicon.png" sizes="32x32">
+
+	<!-- Styles -->
+	<link rel='stylesheet' href='assets/css/split.css' type='text/css' media='screen' />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+
+</head>
+
+<body id="fullsingle" class="page-template-page-fullsingle-split">
+
+<div class="fs-split">
+
+	<!-- Image Side -->
+	<div class="split-image">
+	</div>
+
+	<!-- Content Side -->
+	<div class="split-content">
+
+		<div class="split-content-vertically-center">
+		
+			<div class="split-intro">
+				
+
+				
+				<h1>Pet Finder</h1>
+
+				<span class="tagline"><%= pet.name %></span>
+
+			</div>
+			<style type="text/css">
+				.split-bio label{
+					display: table-row;
+				}
+			</style>
+			<div class="split-bio">
+				<label>Age : <%= pet.age %></label>
+				<label>Breed : <%= pet.breeds[0] %></label>
+				<!-- <p><%= pet.description %></p> -->
+				<label>Mix : <%= pet.mix %></label>
+				<label>Email : <%= pet.contact.email %></label>
+				<img src="<%= pet.media.photos['1'].pn %>">
+			</div>
+			<a href="/" style="font-size: 25px; background-color: #0e86bd;color: #cccccc; border:0; cursor: pointer;">Back</a>
+
+		</div>
+
+	</div>
+
+</div>
+
+</body>
+</html>
