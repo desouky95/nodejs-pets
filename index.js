@@ -1,7 +1,7 @@
 // Import module
 // var petfinder = require('petfinder-promise')('c67778838b65cfc7d59c75c748f7e418', '8b9671ae3aeade899176d701de59446d');
 var petfinder = require('pet-finder-api')('c67778838b65cfc7d59c75c748f7e418','8b9671ae3aeade899176d701de59446d');
-// var bodyParser = require('body-parser');
+var bodyParser = require('body-parser');
 var express = require('express');
 var app = express();
 
@@ -9,7 +9,7 @@ var port = process.env.PORT || 8080;
 
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
-// app.use(bodyParser.urlencoded({ extended: true })); 
+app.use(bodyParser.urlencoded({ extended: true })); 
 app.use(express.static(__dirname + '/public'));
 
 
