@@ -81,8 +81,9 @@
 				}
 			</style>
 			<div style="margin-bottom: 15px;">
-				<form action="/sendMail" method="post" style="">
+				<form action="/sendMail" method="post">
 					<input type="email" name="rec" value="<%= pet.contact.email %>" hidden>
+					<input type="text" name="id" value="<%= pet.id %>" hidden>
 					<input class="data" type="email" name="email" placeholder="Your Email">
 					<textarea class="data" placeholder="Your Message" name="message"></textarea>
 					<input class="data" type="submit" name="" value="Send Mail">
