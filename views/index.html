@@ -57,15 +57,36 @@
 			</div>
 
 			<div class="split-bio">
-				
+				<style type="text/css">
+					.label-item{
+						font-size: 30px; color: #47bec7; padding-right: 10px;
+						font-family: 'Montserrat', sans-serif;
+					}
+					.content{
+						padding-bottom: 15px;
+					}
+					select{
+						 border-radius: 4px; 
+						 font-size: 25px; 
+						 width: 100px;
+						 display: inline-block; 
+						 background-color: #061c30; 
+						 border: 2px solid #47bec7; 
+						 color: #47bec7;
+					}
+
+				</style>
 				<form method="post" action="petRand" class="actions" style="">
-					<div>
-						<label>Gender : </label>
-						Male <input type="radio" name="gender" value="M">
-						Female <input type="radio" name="gender" value="F">
+					<div class="content">
+						<label class="label-item">Gender : </label>
+						<select name="gender" >
+						<option value="M">Male</option>
+						<option value="F">Female</option>
+					</select>
 					</div>
-					<label>Animal : </label>
-					<select name="animal" style="display: inline-block; background-color: #0e86bd; border:0; color: #cccccc;">
+					<div class="content">
+					<label class="label-item">Animal : </label>
+					<select name="animal">
 						<option value="dog">Dog</option>
 						<option value="cat">Cat</option>
 						<option value="barnyard">Barnyard</option>
@@ -74,14 +95,17 @@
 						<option value="reptile">Reptile</option>
 						<option value="smallfurry">Smallfurry</option>
 					</select>
-					<div>
-						<label>Size : </label>
-						Huge <input type="radio" name="size" value="XL">
-						Large <input type="radio" name="size" value="L">
-						Medium <input type="radio" name="size" value="M">
-						Small <input type="radio" name="size" value="S">
 					</div>
-					<button type="submit" style="border-radius: 5px; font-size: 25px; background-color: #0e86bd;color: #cccccc; border:0; cursor: pointer;">GO !</button>
+					<div class="content">
+					<label class="label-item">Gender : </label>
+					<select name="size" >
+						<option value="XL">Huge</option>
+						<option value="L">Large</option>
+						<option value="M">Medium</option>
+						<option value="S">Small</option>
+					</select>
+				</div>
+					<button type="submit" style="border-radius: 5px; font-size: 35px; background-color: #47bec7 ;color: #061c30; border:0; cursor: pointer;">GO !</button>
 				</form>
 
 			</div>

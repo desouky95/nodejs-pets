@@ -57,6 +57,11 @@ table {
   -moz-font-feature-settings: "liga" on;
   margin: 0; }
 
+  input[type="radio"]{
+    color: #0e86bd;
+    background-color: none;
+  }
+
 img.alignright {
   float: right; }
 
