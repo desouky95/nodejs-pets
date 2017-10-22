@@ -1,10 +1,10 @@
 	// Import module
 	// var petfinder = require('petfinder-promise')('c67778838b65cfc7d59c75c748f7e418', '8b9671ae3aeade899176d701de59446d');
+	const sgMail = require('@sendgrid/mail');
 	var petfinder = require('pet-finder-api')('c67778838b65cfc7d59c75c748f7e418','8b9671ae3aeade899176d701de59446d');
 	var bodyParser = require('body-parser');
 	var express = require('express');
 	var app = express();
-	var nodemailer = require('nodemailer');
 
 	var port = process.env.PORT || 8080;
 
@@ -43,34 +43,23 @@
 	  	});
 	});
 
-
-
 	app.post('/sendMail',function(req,res){
 		var sender = req.body.email;
 		var reciver = req.body.rec;
 		var message = req.body.message;
-		var transporter = nodemailer.createTransport({
-		  service: 'gmail',
-		   auth: {
-		   user: 'tubesniper@gmail.com',
-		   pass: 'ismail0100929164'
-			  }
-			});
-
-			var mailOptions = {
-			  from: sender,
-			  to: 'tubesniper@gmail.com',
-			  subject: 'Petfinder Try',
-			  text: message
-			};
-
-			transporter.sendMail(mailOptions, function(error, info){
-			  if (error) {
-			    console.log(error);
-			  } else {
-			    console.log('Email sent: ' + info.response);
-			  }
-			});
-		console.log("Sender : " + sender + "... Reciver : " + reciver);
+		sgMail.setApiKey('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');
+		const msg = {
+  		to: 'tubesniper@gmail.com',
+  		from: sender,
+  		subject: 'Pet Adoption Request',
+  		text: message,
+		};
+		sgMail.send(msg);
+		console.log('Done !! message delieverd from '+ sender + ' to ' + reciver);
 		return res.redirect('/');
 	});
+
+
+
+
+
