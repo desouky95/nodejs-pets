@@ -68,7 +68,27 @@
 				<label>Email : <%= pet.contact.email %></label>
 				<img src="<%= pet.media.photos['1'].pn %>">
 			</div>
-			<a href="/" style="font-size: 25px; background-color: #0e86bd;color: #cccccc; border:0; cursor: pointer;">Back</a>
+			<style type="text/css">
+				.data{
+					padding: 3px;
+					margin-bottom: 5px;
+					border-radius: 4px; 
+					font-size: 25px;
+					background-color: #061c30; 
+					border: 2px solid #47bec7; 
+					color: #47bec7;
+					display: block;
+				}
+			</style>
+			<div style="margin-bottom: 15px;">
+				<form action="/sendMail" method="post" style="">
+					<input type="email" name="rec" value="<%= pet.contact.email %>" hidden>
+					<input class="data" type="email" name="email" placeholder="Your Email">
+					<textarea class="data" placeholder="Your Message" name="message"></textarea>
+					<input class="data" type="submit" name="" value="Send Mail">
+				</form>
+			</div>
+			<a href="/" style="padding: 10px; border-radius: 5px; font-size: 25px; background-color: #47bec7 ;color: #061c30; border:0; cursor: pointer;position: relative;display: inline-block;">Back</a>
 
 		</div>
 
